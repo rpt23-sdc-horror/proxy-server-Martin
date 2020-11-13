@@ -7,7 +7,7 @@
     "type": "git",
     "url": "git+https://github.com/RPT23-Simplicity/hugo-proxy.git"
   },
-  "author": "Hugo Xiong",
+  "author": "Hugo Xiong, Martin Sung",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/RPT23-Simplicity/hugo-proxy/issues"
