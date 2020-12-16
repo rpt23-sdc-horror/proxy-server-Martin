@@ -105,3 +105,6 @@ dist
 
 # webpack bundle
 bundle-proxy.js
+
+# misc
+vault/keys.json
