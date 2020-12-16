@@ -18,7 +18,7 @@ export default function () {
   const responses = http.batch([
     [
       'GET',
-      `${BASE_URL}/shop/${Math.floor(Math.random() * 9000)}/${Math.floor(
+      `${BASE_URL}/shop/${Math.floor(Math.random() * 100000)}/${Math.floor(
         Math.random() * 7
       )}`,
       null,

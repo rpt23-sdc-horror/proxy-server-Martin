@@ -15,7 +15,6 @@ app.use(
   createProxyMiddleware({ target: 'http://localhost:3004', changeOrigin: true })
 );
 
-// port 4000 for the proxy server
 const port = 4000;
 
 app.listen(port, () => {
