@@ -20,7 +20,7 @@
     "start": "node server/index.js",
     "test": "jest --coverage",
     "test:watch": "jest --watch --coverage",
-    "stress-test": "k6 run ./tests/k6-test/k6-test-script.js"
+    "load-test": "k6 run ./tests/k6-test/k6-test-script.js"
   },
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.11.5",
@@ -36,6 +36,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest-environment-enzyme": "^7.1.2",
     "jest-enzyme": "^7.1.2",
+    "memcached": "^2.2.2",
     "morgan": "^1.10.0",
     "newrelic": "^7.0.2",
     "node-fetch": "^2.6.1",

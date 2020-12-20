@@ -1,3 +1,4 @@
 ## Configuration Files
 newrelic.js
 tests/k6-test/k6-test-script.js
+server/middleware/memcached/index.js
