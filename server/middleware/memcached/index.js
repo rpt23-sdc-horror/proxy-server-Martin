@@ -1,32 +1,27 @@
 'use strict';
 
-const Memcached = require('memcached');
+const Memcached = require('memcached-promise');
 
 const memcached = new Memcached('127.0.0.1:11211');
 
-const retrieve = async function (key) {
-  memcached.get(key, function (err, data) {
-    if (err) {
-      console.error(err);
-      throw err;
-    }
-
-    if (data) {
-      return data;
-    } else {
-      return null;
-    }
-  });
+const retrieve = async (key) => {
+  try {
+    const response = await memcached.get(key);
+    return response ? response : undefined;
+  } catch (err) {
+    console.error('Memcached ', err);
+    throw err;
+  }
 };
 
-const store = async function (key, body, duration) {
-  memcached.set(key, body, duration * 360, function (error) {
-    if (error) {
-      console.error(error);
-
-      throw error;
-    }
-  });
+const store = async (key, body, duration) => {
+  try {
+    await memcached.set(key, body, duration * 360);
+    return true;
+  } catch (err) {
+    console.error('Memcached ', err);
+    throw err;
+  }
 };
 
 module.exports = { retrieve, store };
