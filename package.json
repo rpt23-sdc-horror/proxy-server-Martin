@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.11.5",
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
     "classnames": "^2.2.6",
     "core-js": "^3.6.5",
     "dotenv": "^8.2.0",
@@ -41,7 +41,6 @@
     "memcached-promise": "^1.0.1",
     "morgan": "^1.10.0",
     "newrelic": "^7.0.2",
-    "node-fetch": "^2.6.1",
     "prettier": "^2.1.2",
     "prop-types": "^15.7.2",
     "puppeteer": "^5.3.1",
