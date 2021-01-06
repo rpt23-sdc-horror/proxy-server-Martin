@@ -17,7 +17,6 @@ class MemoryCache {
         if (err) {
           reject(err);
         } else {
-          console.log('Data found', data);
           resolve(data);
         }
       });
@@ -32,7 +31,6 @@ class MemoryCache {
         if (err) {
           reject(err);
         } else {
-          console.log('data stored', key, value);
           resolve(true);
         }
       });
