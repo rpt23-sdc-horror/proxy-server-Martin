@@ -26,12 +26,7 @@ app.get('/inventory/:productID/:styleID', async (req, res) => {
     res.status(200).send(result);
   } else {
     await axios
-      .get(`http://localhost:8000/inventory/${productID}/${styleID}`, {
-        params: {
-          productID: productID,
-          styleID: styleID,
-        },
-      })
+      .get(`http://localhost:8000/inventory/${productID}/${styleID}`)
       .then(async (response) => {
         await cache.store(key, response.data, 5);
 
