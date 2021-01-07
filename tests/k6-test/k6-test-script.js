@@ -13,7 +13,7 @@ export let options = {
   ],
 };
 export default function () {
-  const BASE_URL = 'http://54.193.202.247:4000'; // make sure this is not production
+  const BASE_URL = 'http://localhost:4000'; // make sure this is not production
 
   let responses = http.batch([
     [
