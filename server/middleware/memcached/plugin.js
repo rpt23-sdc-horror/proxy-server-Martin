@@ -4,7 +4,7 @@ require('dotenv').config();
 
 class MemoryCache {
   constructor() {
-    const host = process.env.CACHE_HOST || '127.0.0.1';
+    const host = process.env.CACHE_HOST || 'localhost';
 
     this.cache = new Memcached(`${host}:11211`);
   }

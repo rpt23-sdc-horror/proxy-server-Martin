@@ -5,9 +5,11 @@ const path = require('path');
 const morgan = require('morgan');
 const axios = require('axios');
 const MemoryCache = require('./middleware/memcached/index');
-
 const app = express();
 const cache = new MemoryCache();
+
+// Service Endpoints
+const invHost = `${process.env.INV_HOST}` || 'localhost';
 
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '../public')));
@@ -26,7 +28,7 @@ app.get('/inventory/:productID/:styleID', async (req, res) => {
     res.status(200).send(result);
   } else {
     await axios
-      .get(`http://localhost:8000/inventory/${productID}/${styleID}`)
+      .get(`http://${invHost}:8000/inventory/${productID}/${styleID}`)
       .then(async (response) => {
         await cache.store(key, response.data, 5);
 
