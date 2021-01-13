@@ -39,7 +39,7 @@ describe('Memcached Tests', () => {
       Memcached.prototype.get = jest.fn().mockRejectedValue(fakeError);
 
       try {
-        await cache.get('TEST');
+        await cache.retrieve('TEST');
       } catch (err) {
         console.log(err);
         expect(err).toEqual(fakeError);
@@ -66,7 +66,7 @@ describe('Memcached Tests', () => {
     it('should throw an error if an error occurs within memcached', async () => {
       const fakeError = new Error('TEST ERROR');
 
-      jest.mock('memcached-promise');
+      jest.mock('memcached');
 
       Memcached.prototype.set = jest.fn().mockRejectedValue(fakeError);
 
