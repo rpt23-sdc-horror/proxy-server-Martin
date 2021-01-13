@@ -18,7 +18,7 @@ app.get('/inventory/:productID/:styleID', (req, res) => {
   const { productID, styleID } = req.params;
 
   axios
-    .get(`http://54.67.9.242/inventory/${productID}/${styleID}`)
+    .get(`http://${invHost}/inventory/${productID}/${styleID}`)
     .then((response) => {
       res.status(200).send(response.data);
     })
